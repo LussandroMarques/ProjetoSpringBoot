@@ -7,10 +7,10 @@
 <div th:unless="${#lists.isEmpty(alunos)}">
     <dl th:each="aluno : ${alunos}">
         <dt class="bookHeadline">
-            <span th:text="${aluno.nome}">Aluno</span> by <span
-                th:text="${aluno.cpf}">ID</span> (ID: <span
-                th:text="${aluno.curso}">Curso</span> (Curso: <span
-                th:text="${aluno.id}">CPF</span>)
+            <span th:text="${aluno.nome}">Aluno</span> para o curso <span
+                th:text="${aluno.curso}">ID</span> (ID: <span
+                th:text="${aluno.id}">Matricula</span> (CPF: <span
+                th:text="${aluno.cpf}">CPF</span>)
         </dt>
     </dl>
 </div>
