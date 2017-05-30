@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reading List</title>
+</head>
+<body>
+<h2>Lista de Alunos por Faculdade</h2>
+<div th:unless="${#lists.isEmpty(alunos)}">
+    <dl th:each="aluno : ${alunos}">
+        <dt class="bookHeadline">
+            <span th:text="${aluno.nome}">Aluno</span> by <span
+                th:text="${aluno.cpf}">ID</span> (ID: <span
+                th:text="${aluno.curso}">Curso</span> (Curso: <span
+                th:text="${aluno.id}">CPF</span>)
+        </dt>
+    </dl>
+</div>
+<div th:if="${#lists.isEmpty(alunos)}">
+    <p>Nenhum Aluno Cadastrado para esse curso</p>
+</div>
+<hr />
+<h3>Adicione um novo aluno para o curso de :</h3>
+<form method="POST">
+    Nome: <input type="text" name="nome" size="50"> </input><br />
+    CPF: <input type="text" name="cpf" size="51"> </input><br />
+    Matrícula: <input type="text" name="matricula" size="46"> </input><br />
+    <br /> <input type="submit"> </input>
+</form>
+</body>
+</html>
